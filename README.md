@@ -1,0 +1,2 @@
+# chardata
+Unicode character database

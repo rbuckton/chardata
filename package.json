@@ -1,0 +1,37 @@
+{
+  "name": "chardata",
+  "version": "0.0.0-alpha",
+  "description": "Unicode character database",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "generate-gc": "chardata-generator General_Category src/generalCategory.generated.ts",
+    "generate-sc": "chardata-generator Script src/script.generated.ts",
+    "generate-scx": "chardata-generator Script_Extensions src/scriptExtensions.generated.ts",
+    "generate-core": "chardata-generator DerivedCoreProperties src/derivedCoreProperties.generated.ts",
+    "generate-props": "chardata-generator PropList src/propList.generated.ts",
+    "generate": "npm run generate-gc & npm run generate-sc & npm run generate-scx & npm run generate-core & npm run generate-props"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbuckton/chardata.git"
+  },
+  "keywords": [
+    "unicode",
+    "ucd"
+  ],
+  "author": "Ron Buckton <rbuckton@chronicles.org>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rbuckton/chardata/issues"
+  },
+  "homepage": "https://github.com/rbuckton/chardata#readme",
+  "dependencies": {
+    "chardata-charset": "0.0.0-alpha"
+  },
+  "devDependencies": {
+    "chardata-generator": "0.0.0-alpha.4",
+    "typescript": "^2.7.1"
+  }
+}
