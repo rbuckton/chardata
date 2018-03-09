@@ -20,8 +20,6 @@ import getScriptCharSet from "./script";
 import getScriptExtensionsCharSet from "./scriptExtensions";
 import getPropertyCharSet from "./properties";
 
-export default function (propertyNameOrValue: string): ReadonlyCharSet | undefined;
-export default function (propertyName: string, propertyValue: string): ReadonlyCharSet | undefined;
 export default function (propertyName: string, propertyValue?: string): ReadonlyCharSet | undefined {
     if (propertyValue === undefined) {
         return getGeneralCategoryCharSet(propertyName)
@@ -29,14 +27,14 @@ export default function (propertyName: string, propertyValue?: string): Readonly
     }
     else {
         switch (propertyName) {
-            case "General_Category":
             case "gc":
+            case "General_Category":
                 return getGeneralCategoryCharSet(propertyValue);
-            case "Script":
             case "sc":
+            case "Script":
                 return getScriptCharSet(propertyValue);
-            case "Script_Extensions":
             case "scx":
+            case "Script_Extensions":
                 return getScriptExtensionsCharSet(propertyValue);
         }
     }

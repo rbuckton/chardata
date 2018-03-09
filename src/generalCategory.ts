@@ -4,48 +4,47 @@ import * as gc from "./generalCategory.generated";
 
 export * from "./generalCategory.generated";
 
-export const LC = Object.freeze(CharSet.from([gc.Lu, gc.Ll, gc.Lt]));
+export const LC = Object.freeze(CharSet.of(gc.Lu, gc.Ll, gc.Lt));
 export { LC as Cased_Letter };
-export const L = Object.freeze(CharSet.from([gc.Lu, gc.Ll, gc.Lt, gc.Lm, gc.Lo]));
+export const L = Object.freeze(CharSet.of(gc.Lu, gc.Ll, gc.Lt, gc.Lm, gc.Lo));
 export { L as Letter };
-export const M = Object.freeze(CharSet.from([gc.Mn, gc.Mc, gc.Me]));
+export const M = Object.freeze(CharSet.of(gc.Mn, gc.Mc, gc.Me));
 export { M as Mark };
-export const N = Object.freeze(CharSet.from([gc.Nd, gc.Nl, gc.No]));
+export const N = Object.freeze(CharSet.of(gc.Nd, gc.Nl, gc.No));
 export { N as Number };
-export const P = Object.freeze(CharSet.from([gc.Pc, gc.Pd, gc.Ps, gc.Pe, gc.Pi, gc.Pf, gc.Po]));
+export const P = Object.freeze(CharSet.of(gc.Pc, gc.Pd, gc.Ps, gc.Pe, gc.Pi, gc.Pf, gc.Po));
 export { P as Punctuation };
-export const S = Object.freeze(CharSet.from([gc.Sm, gc.Sc, gc.Sk, gc.So]));
+export const S = Object.freeze(CharSet.of(gc.Sm, gc.Sc, gc.Sk, gc.So));
 export { S as Symbol };
-export const Z = Object.freeze(CharSet.from([gc.Zs, gc.Zl, gc.Zp]));
+export const Z = Object.freeze(CharSet.of(gc.Zs, gc.Zl, gc.Zp));
 export { Z as Separator };
-export const C = Object.freeze(CharSet.from([gc.Cc, gc.Cf, gc.Cs, gc.Co, gc.Cn]));
+export const C = Object.freeze(CharSet.of(gc.Cc, gc.Cf, gc.Cs, gc.Co, gc.Cn));
 export { C as Other };
-
 export default function (value: string): ReadonlyCharSet | undefined {
     switch (value) {
-        case "Cased_Letter":
         case "LC":
+        case "Cased_Letter":
             return LC;
-        case "Letter":
         case "L":
+        case "Letter":
             return L;
-        case "Mark":
         case "M":
+        case "Mark":
             return M;
-        case "Number":
         case "N":
+        case "Number":
             return N;
-        case "Punctuation":
         case "P":
+        case "Punctuation":
             return P;
-        case "Symbol":
         case "S":
+        case "Symbol":
             return S;
-        case "Separator":
         case "Z":
+        case "Separator":
             return Z;
-        case "Other":
         case "C":
+        case "Other":
             return C;
         default:
             return getGeneralCategoryCharSet(value);
