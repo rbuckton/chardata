@@ -1,6 +1,6 @@
 {
   "name": "chardata",
-  "version": "0.0.0-alpha",
+  "version": "0.0.0-alpha.1",
   "description": "Unicode character database",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,10 +28,11 @@
   },
   "homepage": "https://github.com/rbuckton/chardata#readme",
   "dependencies": {
-    "chardata-charset": "0.0.0-alpha"
+    "chardata-charset": "0.0.0-alpha.2",
+    "source-map-support": "^0.5.3"
   },
   "devDependencies": {
-    "chardata-generator": "0.0.0-alpha.4",
+    "@types/source-map-support": "^0.4.0",
     "typescript": "^2.7.1"
   }
 }

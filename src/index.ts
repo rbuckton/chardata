@@ -1,4 +1,4 @@
-import { CharSet } from "chardata-charset";
+import { CharSet, ReadonlyCharSet } from "chardata-charset";
 import * as gc from "./generalCategory";
 import * as sc from "./script";
 import * as scx from "./scriptExtensions";
@@ -20,9 +20,9 @@ import getScriptCharSet from "./script";
 import getScriptExtensionsCharSet from "./scriptExtensions";
 import getPropertyCharSet from "./properties";
 
-export default function (propertyNameOrValue: string): CharSet | undefined;
-export default function (propertyName: string, propertyValue: string): CharSet | undefined;
-export default function (propertyName: string, propertyValue?: string): CharSet | undefined {
+export default function (propertyNameOrValue: string): ReadonlyCharSet | undefined;
+export default function (propertyName: string, propertyValue: string): ReadonlyCharSet | undefined;
+export default function (propertyName: string, propertyValue?: string): ReadonlyCharSet | undefined {
     if (propertyValue === undefined) {
         return getGeneralCategoryCharSet(propertyName)
             || getPropertyCharSet(propertyName);
